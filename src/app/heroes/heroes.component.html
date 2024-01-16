@@ -1,0 +1,49 @@
+<!-- <h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+  </div> -->
+
+
+  <h2>My Heroes</h2>
+  <ul class="heroes">
+    <!-- <li>
+      <button type="button">
+        <span class="badge">{{hero.id}}</span>
+        <span class="name">{{hero.name}}</span>
+      </button>
+    </li> -->
+
+    <!-- <li *ngFor="let hero of heroes">
+        <button type="button" (click)="onSelect(hero)">
+            <span class="badge">{{hero.id}}</span>
+            <span class="name">{{hero.name}}</span>
+          </button>   
+    </li> -->
+
+
+    <!-- 这里是添加了一个区域，用来显示被选中的英雄的信息 -->
+    <!-- <div *ngIf="selectedHero">
+        <h2>{{selectedHero.name | uppercase}} Details</h2>
+        <div>id: {{selectedHero.id}}</div>
+        <div>
+          <label for="hero-name">Hero name: </label>
+          <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+        </div>
+      </div> -->
+
+      <!-- 在建立了从组件之后 -->
+
+    <li *ngFor="let hero of heroes">
+
+        <!-- 这里的 [class.selected]="hero === selectedHero" 是指 如果被选中，则使用CSS中的 .selected 的样式？ -->
+        <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+          <span class="badge">{{hero.id}}</span>
+          <span class="name">{{hero.name}}</span>
+        </button>
+    </li>
+
+  </ul>  
+
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>

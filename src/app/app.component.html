@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
+
+<!-- 显示heroes component/页面 -->
+<!-- <app-heroes></app-heroes> -->
+
+<!-- RouterOutlet
+DIRECTIVE
+一个占位符，Angular 会根据当前的路由器状态动态填充它。 -->
+<router-outlet></router-outlet>
+<!-- 显示messages component/页面 -->
+<app-messages></app-messages>
